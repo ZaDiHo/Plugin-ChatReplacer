@@ -28,6 +28,7 @@ public class ChatReplace implements Listener {
         for(ReplaceComponent component: fr.zadiho.chatreplacer.Main.chatComponents) {
             if(component.canReplace(e.getPlayer()));
             e.setMessage(component.replaceText(e.getMessage()));
+            //test//
         }
     }
 
