@@ -1,0 +1,20 @@
+texts:
+  1:
+    #Original text.
+    originaltext: ":heart:"
+    #Text to replace.
+    newtext: "❤"
+    #Permission of the message if null, no permission.
+    permission: chatreplacer.hearth
+  2:
+    originaltext: ":note:"
+    newtext: "♪"
+    permission: chatreplacer.note
+  3:
+    originaltext: ":natural:"
+    newtext: "♮"
+    permission: chatreplacer.natural
+  4:
+    originaltext: ":check:"
+    newtext: "✔"
+    permission: chatreplacer.check

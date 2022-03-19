@@ -1,0 +1,7 @@
+name: ChatReplacer
+version: '1.0-LATEST'
+main: fr.zadiho.chatreplacer.Main
+api-version: 1.18
+authors: [ ZaDiHo ]
+description: Plugin for replace a text by another text !
+website: https://github.com/ZaDiHo
