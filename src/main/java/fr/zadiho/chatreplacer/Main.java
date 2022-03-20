@@ -12,6 +12,7 @@ import java.util.Set;
 public final class Main extends JavaPlugin {
 
     public static Set<ReplaceComponent> chatComponents = new HashSet<>();
+
     @Override
     public void onEnable() {
         saveDefaultConfig();
