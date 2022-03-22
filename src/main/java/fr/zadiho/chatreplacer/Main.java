@@ -20,6 +20,7 @@ public final class Main extends JavaPlugin {
         for(String key : section.getKeys(false)){
             chatComponents.add(new ReplaceComponent(section.getString(key + ".originaltext"), section.getString(key + ".newtext"), section.getString(key + "permission")));
         }
+        
         Bukkit.getServer().getConsoleSender().sendMessage( "\n" +ChatColor.DARK_GRAY + "---------------------------\n" + ChatColor.GOLD + "Chat Replacer vient de démarrer.\n" + ChatColor.DARK_GRAY + "---------------------------");
         registerListeners();
         registerCommands();
