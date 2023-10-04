@@ -17,11 +17,17 @@ public final class Main extends JavaPlugin {
     public void onEnable() {
         saveDefaultConfig();
         ConfigurationSection section = getConfig().getConfigurationSection("texts");
-        for(String key : section.getKeys(false)){
-            chatComponents.add(new ReplaceComponent(section.getString(key + ".originaltext"), section.getString(key + ".newtext"), section.getString(key + "permission")));
+        for (String key : section.getKeys(false)) {
+            chatComponents.add(new ReplaceComponent(section.getString(key + ".pattern"), section.getString(key + ".newtext"), section.getString(key + "permission")));
         }
-        
-        Bukkit.getServer().getConsoleSender().sendMessage( "\n" +ChatColor.DARK_GRAY + "---------------------------\n" + ChatColor.GOLD + "Chat Replacer vient de démarrer.\n" + ChatColor.DARK_GRAY + "---------------------------");
+
+        Bukkit.getLogger().info("=================================");
+        Bukkit.getLogger().info("Loading ChatReplacer by ZaDiHo...");
+        Bukkit.getLogger().info(" ");
+        Bukkit.getLogger().info("Version :" + getDescription().getVersion());
+        Bukkit.getLogger().info(" ");
+        Bukkit.getLogger().info("All is good, have a good day !");
+        Bukkit.getLogger().info("===========================");
         registerListeners();
         registerCommands();
     }
@@ -36,7 +42,11 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        Bukkit.getServer().getConsoleSender().sendMessage( "\n" +ChatColor.DARK_GRAY + "---------------------------\n" + ChatColor.GOLD + "Chat Replacer vient de s'éteindre.\n" + ChatColor.DARK_GRAY + "---------------------------");
+        Bukkit.getLogger().info("=================================");
+        Bukkit.getLogger().info("Disabling ChatReplacer by ZaDiHo...");
+        Bukkit.getLogger().info(" ");
+        Bukkit.getLogger().info("All is good ! See you soon ! :)");
+        Bukkit.getLogger().info("=================================");
     }
 
 

@@ -1,22 +1,27 @@
 package fr.zadiho.chatreplacer;
 
 import org.bukkit.command.CommandSender;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class ReplaceComponent {
-    private String originaltext;
+    private Pattern pattern;
     private String newtext;
     private String permission;
 
-    public ReplaceComponent(String text, String emoji, String permission) {
-        this.originaltext = text;
+    public ReplaceComponent(String pattern, String emoji, String permission) {
+        this.pattern = Pattern.compile(pattern);
         this.newtext = emoji;
         this.permission = permission;
     }
-    public String replaceText(String original){
-        if (originaltext == null || newtext == null) return original;
-        return original.replaceAll(originaltext, newtext);
+
+    public String replaceText(String original) {
+        if (pattern == null || newtext == null) return original;
+        Matcher matcher = pattern.matcher(original);
+        return matcher.replaceAll(newtext);
     }
-    public boolean canReplace(CommandSender sender){
+
+    public boolean canReplace(CommandSender sender) {
         return permission == null || sender.hasPermission(permission);
     }
 }
