@@ -18,16 +18,18 @@ public class ChatReplace implements Listener {
     @EventHandler
     public void onChat(AsyncPlayerChatEvent e){
         for(ReplaceComponent component: fr.zadiho.chatreplacer.Main.chatComponents) {
-            if(component.canReplace(e.getPlayer()));
-            e.setMessage(component.replaceText(e.getMessage()));
+            if(component.canReplace(e.getPlayer())){
+                 e.setMessage(component.replaceText(e.getMessage()));
+            }
         }
     }
 
     @EventHandler
     public void onCommandSay(PlayerCommandPreprocessEvent e){
         for(ReplaceComponent component: fr.zadiho.chatreplacer.Main.chatComponents) {
-            if(component.canReplace(e.getPlayer()));
-            e.setMessage(component.replaceText(e.getMessage()));
+            if(component.canReplace(e.getPlayer())){
+                 e.setMessage(component.replaceText(e.getMessage()));
+            }
         }
     }
 
@@ -36,8 +38,9 @@ public class ChatReplace implements Listener {
         e.setCancelled(true);
         String cmd = e.getCommand();
         for(ReplaceComponent component: fr.zadiho.chatreplacer.Main.chatComponents) {
-            if(component.canReplace(e.getSender()));
-            cmd = (component.replaceText(cmd));
+            if(component.canReplace(e.getSender())){
+                cmd = (component.replaceText(cmd));
+            }
         }
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd);
     }
