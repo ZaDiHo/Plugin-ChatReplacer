@@ -18,7 +18,7 @@ public final class Main extends JavaPlugin {
         saveDefaultConfig();
         ConfigurationSection section = getConfig().getConfigurationSection("texts");
         for (String key : section.getKeys(false)) {
-            chatComponents.add(new ReplaceComponent(section.getString(key + ".pattern"), section.getString(key + ".newtext"), section.getString(key + "permission")));
+            chatComponents.add(new ReplaceComponent(section.getString(key + ".pattern"), section.getString(key + ".newtext"), section.getString(key + ".permission")));
         }
 
         Bukkit.getLogger().info("=================================");
